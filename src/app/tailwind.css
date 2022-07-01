@@ -1,0 +1,151 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.react-dadata__input {
+  border-radius: 10px !important;
+  border-color: rgb(233, 232, 232) !important;
+  font-size: 14px !important;
+  height: 48px !important;
+  padding: 0 10px !important;
+}
+
+.react-dadata__input:focus {
+  border-color:#5DC563 !important;
+  box-shadow: none !important;
+}
+
+.react-dadata__input::placeholder {
+  color: rgb(182, 176, 176) !important;
+}
+
+@media (min-width: 640px) {
+  .react-dadata__input {
+    padding: 0 20px !important;
+  }
+}
+
+#nprogress .spinner {
+  display: none !important;
+}
+
+@layer base {
+
+   /* Класс для скрывания элементов. Базовый делает display: none */
+   .c-hidden {
+    opacity: 0;
+    visibility: hidden;
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Стилизация библиотечного inpyt tel */
+  input[type='tel']::placeholder {
+    color: #979797;
+  }
+
+  input[type='tel']:focus {
+    box-shadow: none;
+    border-color: #5DC563 !important;
+  }
+
+  input[type='tel']:disabled {
+    background-color: rgb(249, 250, 251) !important;
+  }
+
+  /* Input range не поддерживается @tailwind.form */
+  /* Убираем стандартный прогресс-бар input range + поддержка всех браузеров */
+
+  .filter-input-range::-webkit-slider-runnable-track {
+    -webkit-appearance: none;
+    height: 16px;
+  }
+
+  .filter-input-range::-moz-range-track {
+    -moz-appearance: none;
+    height: 16px;
+  }
+
+  .filter-input-range::-ms-track {
+    appearance: none;
+    height: 16px;
+  }
+
+  /* Убираем стандартный бегунок и создаём кастомный input range + поддержка всех браузеров */
+
+  .filter-input-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 16px;
+    width: 16px;
+    background: #ffffff;
+    border: 1px solid #cccccc;
+    border-radius: 50%;
+    cursor: pointer;
+    pointer-events: auto;
+  }
+
+  .filter-input-range::-moz-range-thumb {
+    -moz-appearance: none;
+    height: 16px;
+    width: 16px;
+    background: #ffffff;
+    border: 1px solid #c4c4c4;
+    border-radius: 50%;
+    cursor: pointer;
+    pointer-events: auto;
+  }
+
+  .filter-input-range::-ms-thumb {
+    appearance: none;
+    height: 16px;
+    width: 16px;
+    background: #ffffff;
+    border: 1px solid #c4c4c4;
+    border-radius: 50%;
+    cursor: pointer;
+    pointer-events: auto;
+  }
+
+  /* Стили бегунка при фокусе input range + поддержка всех браузеров */
+
+  .filter-input-range:focus::-webkit-slider-thumb {
+    background: url('../../public/img/backgrounds/radio-border.svg') 0 0 /
+      contain no-repeat;
+    border: none;
+  }
+
+  .filter-input-range:focus::-moz-range-thumb {
+    background: url('../../public/img/backgrounds/radio-border.svg') 0 0 /
+      contain no-repeat;
+    border: none;
+  }
+
+  .filter-input-range:focus::-ms-thumb {
+    background: url('../../public/img/backgrounds/radio-border.svg') 0 0 /
+      contain no-repeat;
+    border: none;
+  }
+
+  /* Стили бегунка при активном состоянии input range + поддержка всех браузеров */
+
+  .filter-input-range:active::-webkit-slider-thumb {
+    background: url('../../public/img/backgrounds/radio-checked.svg') 0 0 /
+      contain no-repeat;
+    border: none;
+  }
+
+  .filter-input-range:active::-moz-range-thumb {
+    background: url('../../public/img/backgrounds/radio-checked.svg') 0 0 /
+      contain no-repeat;
+    border: none;
+  }
+
+  .filter-input-range:active::-ms-thumb {
+    background: url('../../public/img/backgrounds/radio-checked.svg') 0 0 /
+      contain no-repeat;
+    border: none;
+  }
+}
