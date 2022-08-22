@@ -11,7 +11,7 @@
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.3",
     "axios": "^0.26.0",
-    "next": "^12.1.0",
+    "next": "^12.2.3",
     "nextjs-progressbar": "^0.0.14",
     "react": "17.0.2",
     "react-dadata": "^2.16.0",
