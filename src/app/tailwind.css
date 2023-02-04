@@ -11,7 +11,7 @@
 }
 
 .react-dadata__input:focus {
-  border-color:#5DC563 !important;
+  border-color:rgb(149, 228, 203) !important;
   box-shadow: none !important;
 }
 

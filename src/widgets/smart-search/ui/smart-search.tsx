@@ -7,7 +7,7 @@ import { ESuggestionKeys } from '..';
 import { useAppSelector } from '../../../shared/store';
 
 interface IProps {
-  /** Флаг определяет, что поиск только афтомобилей */
+  /** Флаг определяет, что поиск только автомобилей */
   isSelectCar?: boolean;
   className?: string;
 }

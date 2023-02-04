@@ -28,7 +28,7 @@ export const Suggestions: React.FC<IProps> = ({
   const isEmpty = Object.values(suggestions).every(
     (value: ISuggestionItems[]) => !value.length
   );
-  // Если подсказки пустые то прячем селектор
+  // Если подсказки пустые, то прячем селектор
   if (isEmpty && !loading) {
     return null;
   }

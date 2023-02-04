@@ -17,7 +17,7 @@ interface IProps {
   className?: string;
 }
 
-/** Данные, которые приходят с сервера */
+/** Данные с сервера */
 interface IPlacemarks {
   id: number;
   name: string;
@@ -53,31 +53,30 @@ export const YandexMap: React.FC<IProps> = ({ center, zoom, className }) => {
     features: [],
   });
 
-  //TODO: поменять на axios
-  useEffect(() => {
-    const getPlacemarks = async () => {
-      const response = await fetch('https://api.partsclub.ru/shipping/points');
-      const data: IPlacemarks[] = await response.json();
-      const newData = data.map((item: IPlacemarks) => {
-        const { id, name, address, worktime, lat, lng } = item;
-        return {
-          type: 'Feature',
-          id,
-          geometry: { type: 'Point', coordinates: [+lat, +lng] },
-          properties: {
-            balloonContentHeader: `<h4>${name}</h4>`,
-            balloonContentBody: `${address}`,
-            balloonContentFooter: `${worktime}`,
-            hintContent: name,
-          },
-        };
-      });
-      setPoints((prevState) => {
-        return { ...prevState, features: newData };
-      });
-    };
-    getPlacemarks();
-  }, []);
+  // useEffect(() => {
+  //   const getPlacemarks = async () => {
+  //     const response = await fetch('https://api.partsclub.ru/shipping/points');
+  //     const data: IPlacemarks[] = await response.json();
+  //     const newData = data.map((item: IPlacemarks) => {
+  //       const { id, name, address, worktime, lat, lng } = item;
+  //       return {
+  //         type: 'Feature',
+  //         id,
+  //         geometry: { type: 'Point', coordinates: [+lat, +lng] },
+  //         properties: {
+  //           balloonContentHeader: `<h4>${name}</h4>`,
+  //           balloonContentBody: `${address}`,
+  //           balloonContentFooter: `${worktime}`,
+  //           hintContent: name,
+  //         },
+  //       };
+  //     });
+  //     setPoints((prevState) => {
+  //       return { ...prevState, features: newData };
+  //     });
+  //   };
+  //   getPlacemarks();
+  // }, []);
 
   return (
     <>
